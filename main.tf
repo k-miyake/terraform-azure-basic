@@ -11,6 +11,12 @@ terraform {
 
 // Azure Provider の設定
 provider "azurerm" {
-  version = "~> 2.35.0"
+  version = "~>2.0"
   features {}
+}
+
+// リソースグループ
+resource "azurerm_resource_group" "default" {
+  name     = "rg-tfazure-demo"
+  location = "japaneast"
 }
