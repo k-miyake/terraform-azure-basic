@@ -30,6 +30,7 @@ resource "azurerm_storage_account" "default" {
   account_replication_type = "LRS"
 }
 
+// App Service Plan
 resource "azurerm_app_service_plan" "default" {
   name                = "plan-tfazure-demo"
   location            = azurerm_resource_group.default.location
@@ -42,6 +43,7 @@ resource "azurerm_app_service_plan" "default" {
   }
 }
 
+// Function App
 resource "azurerm_function_app" "default" {
   name                       = "func-tfazure-demo"
   location                   = azurerm_resource_group.default.location
